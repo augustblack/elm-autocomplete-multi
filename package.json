@@ -1,0 +1,15 @@
+{
+  "name": "autocomplete-server",
+  "description": "Click [here](https://evancz.github.io/elm-architecture-tutorial/examples/5) to see it running.",
+  "version": "1.0.0",
+  "main": "server.coffee",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0"
+}
