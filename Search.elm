@@ -60,8 +60,18 @@ update action model =
       let 
           term = model.searchTerm ++ toString (Char.fromCode keyCode)
       in
-        ( {model | searchTerm = term, loading=True, response=[]} 
-        , getAutocomplete term)
+          case keyCode of
+            38 -> -- up arrow
+              ( {model | loading=False } , Effects.none)
+            40 -> -- down arrow
+              ( {model | loading=False } , Effects.none)
+            13 -> -- enter
+              ( {model | loading=False } , Effects.none)
+            9 ->  -- tab 
+              ( {model | loading=False } , Effects.none)
+            _ ->
+              ( {model | searchTerm = term, loading=True, response=[]} 
+              , getAutocomplete term)
     KeyInput term ->
       ( {model | searchTerm = term, response = []}
       , if model.searchTerm == "" then Effects.none else getAutocomplete term)
